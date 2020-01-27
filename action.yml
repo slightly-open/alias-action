@@ -1,0 +1,17 @@
+name: alias
+description: Provides an alias for a value
+runs:
+  using: node12
+  main: dist/index.js
+inputs:
+  map:
+    description: Value-alias mapping
+    required: true
+output:
+  alias:
+    description: Alias if value exists in a map
+  has-match:
+    description: true if value exists in a map, otherwise false
+branding:
+  color: 'purple'
+  icon: 'chevrons-right'

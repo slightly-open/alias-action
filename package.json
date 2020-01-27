@@ -1,0 +1,25 @@
+{
+  "name": "alias-action",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "ncc build src/main.ts"
+  },
+  "author": "zaverden",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "13.5.0",
+    "@zeit/ncc": "0.21.0",
+    "husky": "4.2.0",
+    "typescript": "3.7.5"
+  },
+  "dependencies": {
+    "@actions/core": "1.2.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run build && git add dist/"
+    }
+  }
+}

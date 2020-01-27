@@ -1,0 +1,34 @@
+name: CI
+
+on: [push,pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - id: map1
+      uses: ./ # Uses an action in the root directory
+      with:
+        value: ${{ github.actor }}
+        map: |
+          zaverden -> hey
+    - run: echo ${{ steps.map1.outputs.alias }}
+    - run: echo ${{ steps.map1.outputs.has-match }}
+
+
+    - id: map2
+      uses: ./ # Uses an action in the root directory
+      with:
+        value: ${{ github.actor }}
+        map: |
+          zaverden1 -> hey
+    - run: echo ${{ steps.map2.outputs.alias }}
+    - run: echo ${{ steps.map2.outputs.has-match }}
+
+
+
