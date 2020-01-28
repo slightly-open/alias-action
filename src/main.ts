@@ -7,7 +7,7 @@ async function run() {
   const map = parse(getInput('map'))
   const value = getInput('value')
   setOutput('alias', map.get(value) ?? '')
-  setOutput('has-match', `${map.has(value)}`)
+  setOutput('has-match', map.has(value) ? 'yes' : '')
 }
 
 function handleError(err: any) {

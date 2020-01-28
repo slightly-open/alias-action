@@ -30,5 +30,15 @@ jobs:
     - run: echo ${{ steps.map2.outputs.alias }}
     - run: echo ${{ steps.map2.outputs.has-match }}
 
+    - run: echo steps.map1.outputs.has-match
+      if: steps.map1.outputs.has-match == 'true'
+    - run: echo steps.map2.outputs.has-match
+      if: steps.map2.outputs.has-match == 'true'
+
+    - run: echo steps.map1.outputs.has-match
+      if: steps.map1.outputs.has-match
+    - run: echo steps.map2.outputs.has-match
+      if: steps.map2.outputs.has-match
+
 
 

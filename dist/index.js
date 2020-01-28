@@ -77,7 +77,7 @@ function run() {
         const map = parse(Object(_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput)('map'));
         const value = Object(_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput)('value');
         Object(_actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput)('alias', (_a = map.get(value), (_a !== null && _a !== void 0 ? _a : '')));
-        Object(_actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput)('has-match', `${map.has(value)}`);
+        Object(_actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput)('has-match', map.has(value) ? 'yes' : '');
     });
 }
 function handleError(err) {
